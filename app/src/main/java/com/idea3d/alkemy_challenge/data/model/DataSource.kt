@@ -1,7 +1,7 @@
 package com.idea3d.alkemy_challenge.data
 
 import com.idea3d.alkemy_challenge.data.model.Movie
-import com.idea3d.alkemy_challenge.vo.Resource
+import com.idea3d.alkemy_challenge.core.vo.Resource
 
 class DataSource {
 

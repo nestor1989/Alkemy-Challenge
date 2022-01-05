@@ -1,4 +1,4 @@
-package com.idea3d.alkemy_challenge.vo
+package com.idea3d.alkemy_challenge.core.vo
 
 import java.lang.Exception
 

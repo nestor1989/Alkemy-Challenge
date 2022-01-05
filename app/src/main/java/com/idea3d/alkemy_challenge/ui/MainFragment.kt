@@ -5,14 +5,31 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.idea3d.alkemy_challenge.R
+import com.idea3d.alkemy_challenge.core.vo.Resource
+
+
+import com.idea3d.alkemy_challenge.data.DataSource
+import com.idea3d.alkemy_challenge.data.model.Movie
+
 import com.idea3d.alkemy_challenge.databinding.FragmentMainBinding
+import com.idea3d.alkemy_challenge.domain.RepoImpl
+import com.idea3d.alkemy_challenge.ui.viewmodel.MainViewModel
+import com.idea3d.alkemy_challenge.ui.viewmodel.VMFactory
 
 
-class MainFragment : Fragment() {
+class MainFragment : Fragment(), MainAdapter.OnMovieClickListener {
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
+    private val viewModel by viewModels<MainViewModel>(){ VMFactory(RepoImpl(DataSource())) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,14 +43,46 @@ class MainFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentMainBinding.inflate(inflater, container, false)
+
+        setUpRecyclerView()
+
+        viewModel.fetchMoviesList.observe(viewLifecycleOwner, Observer { result ->
+            when(result){
+                is Resource.Loading->{
+                    binding.prBar.visibility=View.VISIBLE
+                }
+                is Resource.Success->{
+                    binding.prBar.visibility=View.GONE
+                    binding.rvMovies.adapter=MainAdapter(requireContext(), result.data, this)
+                }
+                is Resource.Failure->{
+                    binding.prBar.visibility=View.GONE
+                    Toast.makeText(requireContext(),"Estamos teniendo un problema para traer los datos ${result.exception}",Toast.LENGTH_SHORT).show()
+                }
+
+            }
+        })
+
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.button.setOnClickListener {
-            findNavController().navigate(R.id.detailsFragment)
-        }
+
+           // findNavController().navigate(R.id.detailsFragment)
+    }
+
+    private fun setUpRecyclerView() {
+        val appContext = requireContext().applicationContext
+        val recyclerView = binding.rvMovies
+        recyclerView.layoutManager=LinearLayoutManager(appContext)
+        recyclerView.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
+
+    }
+
+    override fun onMovieClick(movie: Movie) {
+        findNavController().navigate(R.id.detailsFragment)
     }
 }
