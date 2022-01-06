@@ -39,7 +39,7 @@ class MainAdapter(private val context: Context, private val moviesList:List<Movi
     inner class MainViewHolder(private val itemBinding: MoviesRowBinding):
         BaseViewHolder<Movie>(itemBinding.root) {
         override fun bind(item: Movie) {
-            Glide.with(context).load(item.imagen).centerCrop().into(itemBinding.ivPortada)
+            Glide.with(context).load("https://image.tmdb.org/t/p/w500/${item.imagen}").centerCrop().into(itemBinding.ivPortada)
             itemBinding.tvtitulo.text=item.titulo
             itemBinding.tvDesc.text=item.popularidad.toString()
             itemView.setOnClickListener {itemClickListener.onMovieClick(item)}
