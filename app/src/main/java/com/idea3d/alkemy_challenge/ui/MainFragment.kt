@@ -71,7 +71,6 @@ class MainFragment : Fragment(), MainAdapter.OnMovieClickListener {
         super.onViewCreated(view, savedInstanceState)
 
 
-           // findNavController().navigate(R.id.detailsFragment)
     }
 
     private fun setUpRecyclerView() {

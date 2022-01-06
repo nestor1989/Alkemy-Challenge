@@ -41,7 +41,7 @@ class MainAdapter(private val context: Context, private val moviesList:List<Movi
         override fun bind(item: Movie) {
             Glide.with(context).load(item.imagen).centerCrop().into(itemBinding.ivPortada)
             itemBinding.tvtitulo.text=item.titulo
-            itemBinding.tvDesc.text=item.genero
+            itemBinding.tvDesc.text=item.popularidad.toString()
             itemView.setOnClickListener {itemClickListener.onMovieClick(item)}
         }
     }

@@ -5,6 +5,6 @@ import com.idea3d.alkemy_challenge.core.vo.Resource
 
 interface Repo {
 
-    fun getMoviesList(): Resource<List<Movie>>
+    suspend fun getMoviesList(drinkName:String): Resource<List<Movie>>
 
 }
