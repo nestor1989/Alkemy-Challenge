@@ -16,7 +16,9 @@ data class Movie(
     @SerializedName("release_date")
     val estreno:String,
     @SerializedName("poster_path")
-    val imagen: String
+    val imagen: String,
+    @SerializedName("overview")
+    val descripcion:String
     ): Parcelable
 
 data class MoviesList(
