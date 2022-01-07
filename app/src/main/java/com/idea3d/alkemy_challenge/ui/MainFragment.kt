@@ -60,7 +60,7 @@ class MainFragment : Fragment(), MainAdapter.OnMovieClickListener {
                 is Resource.Failure->{
                     binding.prBar.visibility=View.GONE
                     binding.prError.visibility=View.VISIBLE
-                    Toast.makeText(requireContext(),"Estamos teniendo un problema para traer los datos ${result.exception}",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(),"Revise su conexión a internet ${result.exception}",Toast.LENGTH_LONG).show()
                 }
 
             }

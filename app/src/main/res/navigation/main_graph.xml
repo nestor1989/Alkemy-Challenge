@@ -18,7 +18,11 @@
         android:id="@+id/detailsFragment"
         android:name="com.idea3d.alkemy_challenge.ui.DetailsFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" />
+        tools:layout="@layout/fragment_details" >
+        <action
+            android:id="@+id/action_detailsFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/introFragment"
         android:name="com.idea3d.alkemy_challenge.ui.IntroFragment"

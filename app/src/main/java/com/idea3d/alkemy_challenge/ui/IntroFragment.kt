@@ -11,6 +11,7 @@ import com.idea3d.alkemy_challenge.R
 import com.idea3d.alkemy_challenge.data.model.Movie
 import com.idea3d.alkemy_challenge.databinding.FragmentDetailsBinding
 import com.idea3d.alkemy_challenge.databinding.FragmentIntroBinding
+import java.util.*
 
 
 class IntroFragment : Fragment() {
@@ -29,6 +30,8 @@ class IntroFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentIntroBinding.inflate(inflater, container, false)
 
+
+
         _binding!!.button.setOnClickListener{
             findNavController().navigate(R.id.mainFragment)
         }
@@ -40,4 +43,5 @@ class IntroFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
     }
+
 }

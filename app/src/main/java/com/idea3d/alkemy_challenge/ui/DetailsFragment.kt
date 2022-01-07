@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.idea3d.alkemy_challenge.R
 import com.idea3d.alkemy_challenge.data.model.Movie
@@ -40,5 +41,11 @@ class DetailsFragment : Fragment() {
         Glide.with(requireContext()).load("https://image.tmdb.org/t/p/w500/${movie.imagen}").centerCrop().into(_binding!!.imageView)
         _binding!!.tvTitle.text=movie.titulo
         _binding!!.tvDesc.text=movie.descripcion
+        _binding!!.tvIdioma.text=movie.idioma
+        _binding!!.tvFecha.text=movie.estreno
+        _binding!!.floatingActionButton.setOnClickListener{
+            findNavController().navigate(R.id.mainFragment)
+        }
+
     }
 }
