@@ -50,13 +50,16 @@ class MainFragment : Fragment(), MainAdapter.OnMovieClickListener {
             when(result){
                 is Resource.Loading->{
                     binding.prBar.visibility=View.VISIBLE
+                    binding.prError.visibility=View.GONE
                 }
                 is Resource.Success->{
                     binding.prBar.visibility=View.GONE
+                    binding.prError.visibility=View.GONE
                     binding.rvMovies.adapter=MainAdapter(requireContext(), result.data, this)
                 }
                 is Resource.Failure->{
                     binding.prBar.visibility=View.GONE
+                    binding.prError.visibility=View.VISIBLE
                     Toast.makeText(requireContext(),"Estamos teniendo un problema para traer los datos ${result.exception}",Toast.LENGTH_SHORT).show()
                 }
 
@@ -77,7 +80,7 @@ class MainFragment : Fragment(), MainAdapter.OnMovieClickListener {
         val appContext = requireContext().applicationContext
         val recyclerView = binding.rvMovies
         recyclerView.layoutManager=LinearLayoutManager(appContext)
-        recyclerView.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
+        //recyclerView.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
 
     }
 

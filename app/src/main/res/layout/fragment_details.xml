@@ -8,12 +8,22 @@
     tools:context=".ui.DetailsFragment">
 
 
+    <ImageView
+        android:layout_width="145dp"
+        android:layout_height="50dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/netfx"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="345dp" />
+        app:layout_constraintGuide_begin="487dp" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -25,7 +35,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
 
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
         app:layout_constraintVertical_bias="0.429"
         tools:src="@tools:sample/avatars" />
 
@@ -34,9 +44,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textSize="25sp"
-
+        android:ellipsize="end"
+        android:fontFamily="@font/at_surt_regular"
+        android:maxLines="2"
+        android:textAlignment="textStart"
+        android:textSize="20dp"
         android:textStyle="bold"
+        android:lineHeight="31sp"
+        android:textFontWeight="600"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="425dp" />
+        app:layout_constraintGuide_begin="553dp" />
 
     <TextView
         android:id="@+id/tvDesc"
@@ -63,8 +78,21 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         tools:text="esta peli se trata de un monton de cosas"
+        android:textSize="10dp"
+        android:fontFamily="@font/at_surt_regular"
+        android:letterSpacing="0.013"
+        android:lineHeight="22sp"
+
+        android:textAlignment="textStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="73dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
