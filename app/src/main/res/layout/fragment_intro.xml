@@ -14,13 +14,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:fontFamily="@font/at_surt_regular"
         android:lineHeight="20sp"
-        android:text="How to started"
+        android:text="How to get started"
         android:textAlignment="center"
         android:textFontWeight="600"
         android:textSize="21sp"
