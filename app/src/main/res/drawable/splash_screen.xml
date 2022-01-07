@@ -3,16 +3,8 @@
     android:opacity="opaque"
     >
 
-  <item android:drawable="@color/white"/>
+  <item android:drawable="@drawable/netfx_screen"/>
 
-    <item
-        android:left="60dp"
-        android:right="60dp"
-        android:top="450dp">
-
-        <bitmap android:src="@drawable/netfx"/>
-
-    </item>
 
 
 

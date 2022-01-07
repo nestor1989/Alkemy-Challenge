@@ -14,5 +14,8 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="Splash_screen" parent="Theme.Alkemy_challenge">
+        <item name="android:windowBackground">@drawable/netfx_screen</item>
 
+    </style>
 </resources>
