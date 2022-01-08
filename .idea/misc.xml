@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/android-sdk/alkemy_challenge/app/src/main/res/drawable/gradiente.xml" value="0.2203125" />
         <entry key="..\:/android-sdk/alkemy_challenge/app/src/main/res/drawable/splash_screen.xml" value="0.25" />
+        <entry key="..\:/android-sdk/alkemy_challenge/app/src/main/res/drawable/splash_theme_dark.xml" value="0.2203125" />
         <entry key="..\:/android-sdk/alkemy_challenge/app/src/main/res/drawable/style_button.xml" value="0.18" />
         <entry key="..\:/android-sdk/alkemy_challenge/app/src/main/res/layout/activity_main.xml" value="0.11730072463768115" />
         <entry key="..\:/android-sdk/alkemy_challenge/app/src/main/res/layout/fragment_details.xml" value="0.5" />
